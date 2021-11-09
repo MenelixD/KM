@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+
+        <p>podaj liczbe calkowita /// podaj poczatek przedzialu ///    podaj koniec przedzialu</p>
+
+        <form name="a">
+            <input type="text" name="a">
+
+            <input type="text" name="b">
+
+            <input type="text" name="c">
+            
+
+            <button type="submit">potwierdź</button>
+
+        </form>
+
+        
+
+        
+
+        <div class="wynik"></div>
+
+        <script>
+            const a = document.querySelector('a');
+
+            const b = document.querySelector('b');
+
+            const c = document.querySelector('c');
+
+            const div = document.querySelector('form');
+
+            
+            c.addEventListener('submit')
+            if(a>b && a<c)
+            {
+                div.textContent = 'liczba miesci sie w przedziale';
+            }
+            else{
+                div.textContent = 'liczba nie miesci sie w przedziale';
+            }
+            
+
+            
+
+
+
+        </script>
+
+
+
+
+    </body>
+
+
+
+</html>
