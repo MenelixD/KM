@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>   
+    </head>
+
+    <body>
+        
+        <form >
+            <input type="text" name="a" >
+            <input type="text" name="b" >
+            <input type="text" name="c" >
+            <button type="submit">wyslij</button>
+        </form>
+
+        <div class="wynik"></div>
+
+        <script>
+            const formularz = document.querySelector('form');
+
+            const div = document.querySelector('.wynik');
+
+            formularz.addEventListener('submit', (e) =>
+            {
+                e.preventDefaoult();
+
+                const a = document.querySelector('input[name="a"]').value;
+
+                const b = document.querySelector('input[name="b"]').value;
+
+                const c = document.querySelector('input[name="c"]').value;
+
+                if(a<b && a<c)
+                {
+                    if(b<c)
+                    {
+                        div.textContent = ` liczby: ${a} ${b} ${c}`;
+                    }
+                    else if(b>c)
+                    {
+                        div.textContent = `liczby: ${a} ${c} ${b}`;
+                    }
+                }
+                else if(b<a && b<c)
+                {
+                    if(a<c)
+                    {
+                        div.textContent = `liczby: ${b} , ${a} , ${c} `;
+                    }
+                    else if(c<a)
+                    {
+                        div.textContent = ` liczby: ${b} , ${c} , ${a}`;
+                    }
+                }
+                else if(c<a && c<b)
+                {
+                    if(a<b)
+                    {
+                        div.textContent = `liczby: ${c} , ${a} , ${b}`;
+                    }
+                    else if(b<a)
+                    {
+                        div.textContent = `liczby: ${c} , ${b} , ${a}` ;
+                    }
+                }
+                
+            });
+
+
+
+        </script>
+        
+
+
+
+    </body>
+</html>
