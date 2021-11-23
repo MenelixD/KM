@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form action="" method="POST">
+            <input type="number" name="a" >
+            <input type="number" name="b">
+            <input type="submit" value="potwierdz">
+        </form>
+
+        <script>
+            const formluarz = document.querySelector('form');
+
+            formluarz.addEventListener('submit',(e) => {
+                e.preventDefault();
+
+                const a = document.querySelector('input[name="a"]').value*1;
+                const b = document.querySelector('input[name="b"]').value*1;
+
+                let i = a;
+
+                let ilosc_liczb = 0;
+
+                let srednia = 0;
+
+                while(i<=b){
+
+                    ilosc_liczb++;
+
+                    srednia=srednia+i;
+
+                    i++;
+
+                }
+
+                srednia=srednia/ilosc_liczb;
+
+                document.write('srednia tych liczb wynosi: '+srednia);
+
+
+            });
+
+
+
+        </script>
+
+
+    </body>
+</html>

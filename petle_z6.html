@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <form action="" method="POST">
+            <input type="numer" name="liczba">
+            <input type="submit" value="potwierdz">
+        </form>
+
+        <script>
+            const formularz = document.querySelector('form');
+
+            formularz.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const liczba = document.querySelector('input[name="liczba"]').value*1;
+
+                for(let i=2; i<liczba;i++){
+                    
+                    if(liczba%i!=0){
+                        document.write("to jest liczba pierwsza");
+                    }
+                    else{
+                        document.write("to nie jest liczba pierwsza");
+
+                        brake;
+                    }
+
+                }
+
+            });
+        </script>
+
+
+    </body>
+</html>

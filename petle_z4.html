@@ -4,31 +4,42 @@
 
     </head>
     <body>
+        
         <form action="" method="POST">
-            <input type="number" name="poczatek">
-            <input type="number" name="koniec">
+            <input type="number" name="liczba">
             <input type="submit" value="potwierdz">
         </form>
 
         <div class="wynik"></div>
 
         <script>
+
             const formularz = document.querySelector('form');
             const div = document.querySelector('form');
 
             formularz.addEventListener('submit', (e) => {
                 e.preventDefault();
-                let poczatek = document.querySelector('input[name="poczatek"]').value*1;
-                const koniec = document.querySelector('input[name="koniec"]').value*1;
 
-                for(poczatek;poczatek<koniec; poczatek++){
-                    if((poczatek%5)==0){
-                        document.write(" " +poczatek);
-                    }
+                const n = document.querySelector('input[name="liczba"]').value*1;
+
+                let silnia=0;
+
+                for(let i=1; i<=n; i++)
+                {
+                    silnia=silnia+i;
                 }
 
-            })
+                div.textContent = `silnia liczby ${n} wynosi ${silnia}`;
+
+
+            });
+
+
+
+
+
         </script>
+
 
     </body>
 </html>
