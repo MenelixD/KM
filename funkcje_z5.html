@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form action="" method="POST">
+            <input type="number" name="n">
+            <input type="number" name="k">
+            <input type="submit" value="potwierdz">
+        </form>
+
+        <script>
+
+            let silniak=1;
+
+            let silnian=1;
+            
+            function silnia(a,b){
+                for(let i=1; i<=a ; i++)
+                {
+                    silniak=silniak*i;
+                }
+                for(let i=1; i<=b ; i++){
+                    silnian=silnian*i;
+                }
+            }
+
+            function symbolNewtona(n, k){
+                silnia(n, k);
+
+                let sn = silnian / (silniak * (n-k));
+
+                document.write("symbol newtona dla tych liczb wynosi: "+sn);
+
+            }
+
+            const formularz = document.querySelector('form');
+
+            formularz.addEventListener('submit',(e) =>{
+                e.preventDefault();
+
+
+
+                const n = document.querySelector('input[name="n"]').value*1;
+
+                const k = document.querySelector('input[name="k"]').value*1;
+
+                if(k < n && 0<k && n<=12){
+                    symbolNewtona(n,k);
+                }
+                else{
+                    document.write("podano liczby nie spelniajace warunku");
+                }
+            });
+        </script>
+
+
+    </body>
+</html>

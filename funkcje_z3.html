@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <form action="" method="POST">
+            <input type="number" name="a">
+            <input type="number" name="b">
+            <input type="submit" value="potwierdz">
+        </form>
+        
+        <script>
+
+            function funkcja(a, b){
+                let liczba=0;
+
+                liczba = a+b;
+
+                liczba = liczba* liczba * liczba;
+
+                document.write (liczba);
+            }
+
+            const formularz = document.querySelector('form');
+
+            formularz.addEventListener('submit',(e) =>{
+
+                e.preventDefault();
+
+                const c = document.querySelector('input[name="a"]').value*1;
+
+                const d = document.querySelector('input[name="b"]').value*1;
+
+                funkcja(c, d);
+
+            });
+
+
+        </script>
+
+
+
+
+    </body>
+</html>

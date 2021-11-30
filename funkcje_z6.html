@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <form action="" method="POST">
+            <input type="number" name="a">
+            <input type="submit" value="potwierdz">
+        </form>
+
+        <script>
+
+            function ileCyfr(a){
+                const lc= a.length;
+
+                document.write(lc);
+            }
+
+            const formularz = document.querySelector('form');
+
+            formularz.addEventListener('submit',(e) =>{
+                e.preventDefault();
+
+                const a = document.querySelector('input[name="a"]').value;
+
+                ileCyfr(a);
+
+            });
+
+
+        </script>
+
+    </body>
+</html>

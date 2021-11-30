@@ -22,11 +22,11 @@
 
                 const n = document.querySelector('input[name="liczba"]').value*1;
 
-                let silnia=0;
+                let silnia=1;
 
                 for(let i=1; i<=n; i++)
                 {
-                    silnia=silnia+i;
+                    silnia=silnia*i;
                 }
 
                 div.textContent = `silnia liczby ${n} wynosi ${silnia}`;

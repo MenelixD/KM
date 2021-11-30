@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <p>aby dodawac, wprowadz 1, zeby odejmowac wprowadz 2, zeby mnozyc wybierz 3, zeby dzielic wybierz 4 (do pierwszej rubryki)</p>
+
+        <form action="" method="POST">
+            <input type="number" name="warunek">
+            <input type="number" name="a">
+            <input type="number" name="b">
+            <input type="submit" value="potwieredz">
+        </form>
+
+
+        <script>
+
+            function dodawanie(a, b){
+                document.write("suma wynosi:"+(a+b));
+            }
+            function odejmowac(a, b){
+                document.write("suma wynosi:"+(a-b));
+            }
+            function mnozenie(a, b){
+                document.write("suma wynosi:"+(a*b));
+            }
+            function dzielenie(a,b){
+                document.write("suma wynosi:"+(a/b));
+            }
+
+            const formularz = document.querySelector('form');
+
+            formularz.addEventListener('submit', (e) =>{
+                e.preventDefault();
+
+                const c = document.querySelector('input[name="a"]').value*1;
+
+                const d = document.querySelector('input[name="b"]').value*1;
+
+                const warunek = document.querySelector('input[name="warunek"]').value*1;
+
+                if(warunek==1){
+                    dodawanie(c, d);
+                }
+                else if(warunek==2){
+                    odejmowac(c, d);
+                }
+                else if(warunek==3){
+                    mnozenie(c, d);
+                }
+                else if(warunek==4){
+                    dzielenie(c, d);
+                }
+            });
+
+        </script>
+
+
+    </body>
+</html>
