@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tablice 4</title>
+</head>
+<body>
+    
+    <form action="" method="POST">
+        <input type="number" name="ilosc">
+        <input type="submit">
+    </form>
+
+    <div class="tabela1"></div>
+    <div class="tabela2"></div>
+    <div class="max"></div>
+    <div class="min"></div>
+
+    <script>
+
+        const tab = [];
+
+        const formularz = document.querySelector('form');
+
+        const divTabela1 = document.querySelector('div.tabela1');
+
+        const divTabela2 = document.querySelector('div.tabela2');
+
+        const divMax = document.querySelector('div.max');
+
+        const divMin = document.querySelector('div.min');
+
+        formularz.addEventListener('submit', e =>{
+            e.preventDefault();
+
+            let ilosc = document.querySelector('input[name="ilosc"]').value*1;
+
+            for(let i=0; i<ilosc;i++){
+                tab[i] = Math.round(Math.random()*100);
+            }
+
+            ilosc--;
+
+            divTabela1.textContent = tab.join(', ');
+
+            tab.sort();
+
+            divTabela2.textContent = tab.join(', ');
+
+            const min = tab[0];
+
+            const max = tab[ilosc];
+
+            divMin.textContent =`najmniejsza wartosc wynosi: ${min}`;
+
+            divMax.textContent =`najwieksza wartosc wynosi ${max}`;
+
+            
+
+
+        });
+
+        
+
+
+
+    </script>
+
+
+</body>
+</html>
