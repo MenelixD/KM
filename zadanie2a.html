@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zadanie_2a</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <input type="number" name="a">
+        <input type="number" name="b">
+        <input type="number" name="c">
+        <input type="submit" value="potwierdz">
+    </form>
+
+    <div class="wynik"></div>
+
+    <script>
+        const formularz = document.querySelector('form');
+        const div = document.querySelector('div');
+
+        formularz.addEventListener('submit', e =>{
+            e.preventDefault();
+            let delta;
+            let x1, x2;
+            let pierwiastekDelty
+            
+
+            const a = document.querySelector('input[name="a"]').value*1;
+            const b = document.querySelector('input[name="b"]').value*1;
+            const c = document.querySelector('input[name="c"]').value*1;
+
+            delta = (b*b)-4*a*c; 
+            
+            ;
+
+
+            if(delta<0){
+                div.textContent = `delta wynosi: ${delta} , nie ma pierwiastków`
+            }
+            else if(delta==0){
+                x1= b*(-1) / 2*a
+                div.textContent = `delta wynosi: ${delta} , jest jeden pierwiastek: ${x1}`
+            }
+            else{
+                pierwiastekDelty= Math.sqrt(delta);
+                x1= b*(-1) - pierwiastekDelty / 2 * a;
+                x2= b*(-1) + pierwiastekDelty / 2 * a;
+                
+                div.textContent = `delta wynosi: ${delta} , są dwa pierwiastki: ${x1} i ${x2}`
+            }
+
+
+
+        });
+    </script>
+    
+</body>
+</html>

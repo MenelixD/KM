@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zadanie_1a</title>
+</head>
+<body>
+    
+    <form action="" method="POST">
+        <input type="number" name="a">
+        <input type="number" name="b">
+        <input type="number" name="c">
+        <input type="submit" value="potwierdz">
+    </form>
+
+    <div class="wynik"></div>
+
+    <script>
+        const formularz = document.querySelector('form');
+        const div = document.querySelector('div')
+
+        formularz.addEventListener('submit', e =>{
+            e.preventDefault();
+
+            const a = document.querySelector('input[name="a"]').value*1;
+            const b = document.querySelector('input[name="b"]').value*1;
+            const c = document.querySelector('input[name="c"]').value*1;
+
+            if(a>b){
+                if(a>c){
+                    div.textContent = `najwyższa wartość wynosi: ${a} `
+                }
+                else if(a<c){
+                    div.textContent = `najwyższa wartość wynosi: ${c} ` 
+                }
+            }
+            else if(b>a){
+                if(b>c){
+                    div.textContent = `najwyższa wartość wynosi: ${b} `
+                }
+                else if(b<c){
+                    div.textContent = `najwyższa wartość wynosi: ${c} `
+                }
+            }
+            else if(a==b){
+                if(b==c){
+                    div.textContent = `liczby są równe`
+                }
+            }
+
+        });
+    </script>
+
+
+</body>
+</html>

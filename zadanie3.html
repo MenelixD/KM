@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>podaj reszte w groszach</p>
+    </div>
+    <form action="" method="POST">
+        <input type="number" name="reszta">
+        <input type="submit" value="licz">
+    </form>
+
+    <div class="wynik"></div>
+
+    <script>
+        const formularz = document.querySelector('form');
+        const div = document.querySelector('div');
+
+        formularz.addEventListener('submit', e =>{
+            e.preventDefault();
+
+            let ilosc500 = 0;
+            let ilosc200 = 0;
+            let ilosc100 =0;
+            let ilosc50=0;
+            let ilosc20=0;
+            let ilosc10=0;
+            let ilosc5=0;
+            let ilosc2=0;
+            let ilosc1=0;
+
+            let reszta = document.querySelector('input[name="reszta"]').value*1;
+            
+
+            while(true){
+                if(reszta>=500){
+                    ilosc500++;
+                    reszta=reszta-500;
+                }
+                else if(reszta>=200){
+                    ilosc200++;
+                    reszta=reszta-200;
+                }
+                else if(reszta>=100){
+                    ilosc100++;
+                    reszta=reszta-100;
+                }
+                else if(reszta>=50){
+                    ilosc50++;
+                    reszta=reszta-50;
+                }
+                else if(reszta>=20){
+                    ilosc20++;
+                    reszta=reszta-20;
+                }
+                else if(reszta>=10){
+                    ilosc10++;
+                    reszta=reszta-10;
+                }
+                else if(reszta>=5){
+                    ilosc5++;
+                    reszta=reszta-5;
+                }
+                else if(reszta>=2){
+                    ilosc2++;
+                    reszta=reszta-2;
+                }
+                else if(reszta>=1){
+                    ilosc1++;
+                    reszta=reszta-1;
+                }
+                else break;
+
+            }
+
+            div.textContent = `należy wydać ${ilosc500} monet 5 zl, ${ilosc200} monet 2 zl, ${ilosc100} monet 1 zl, ${ilosc50} monet 50 gr, ${ilosc20} monet 20 gr, ${ilosc10} monet 10 gr, ${ilosc5} monet 5 gr, ${ilosc2} monet 2 gr, ${ilosc1} monet 1 gr. `;
+
+        });
+    </script>
+
+</body>
+</html>
