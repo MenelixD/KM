@@ -1,0 +1,48 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-size: 50px;
+    color: red;
+
+}
+
+
+p{
+    background-color: yellow;
+}
+
+p.akapit1{
+    font-size: 30px;
+    padding: 20px;
+    background-color: blue;
+    transition: 500ms;
+}
+p.akapit2{
+
+}
+p.akapit1:hover{
+    background-color: orange;
+}
+
+li:nth-child(){
+    color:  chocolate;
+}
+ul{
+    list-style: none;
+}
+li::before{
+    content: 'A ' ;
+    padding-right: 10px;
+
+}
+div.img{
+    width: 800px;
+    height: 100px;
+}
+
+img{
+    max-width: 100%;
+    object-fit: cover;
+}
